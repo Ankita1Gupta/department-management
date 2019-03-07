@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+div ul li{
+float:right;
+border-right:1px solid lightgray;
+height:2vw;
+list-style:none;
+}
+
+</style>
+</head>
+<body bgcolor="LavenderBlush" onload="typeWriter()">
+
+<!--back to homepage -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<a href="project2.html"><img src="c1.png" align="left" height="auto" width="135"></a>
+<div id="right">
+<ul>
+<li style="font-size:2vw"><a href="project2.html"><i class="fa fa-home"></i></a></li>
+<li style="font-size:2vw"><b>Welcome,Guest </b></li>
+</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<h1 id="box" style="text-shadow: 2px 2px 5px grey;font-size:3vw"></h1>
+<p id="box1" style="font-size:2vw"></p>
+<p id="box2" style="font-size:2vw"></p>
+<p id="box3" style="font-size:2vw"></p>
+<p id="box4" style="font-size:2vw"></p>
+<p id="box5" style="font-size:2vw"></p>
+<p id="box6" style="font-size:2vw"></p>
+<p id="box7" style="font-size:2vw"></p>
+<script>
+var i = 0;
+var j=0;
+var k=0;
+var l=0;
+var m=0;
+var n=0;
+var o=0;
+var p=0;
+var txt1="1.)Click on select teachers for selecting teachers for duties.";
+var txt2="2.)We will be directed to next page which asks you for the input.";
+var txt3="3.)Select the day for which you want to depute the faculty in select day field.";
+var txt4="4.)Select the lectures for which you want to depute faculty in select lectures field.";
+var txt5="5.)Once you done click on submit and the next page shows up with the list of teachers that are free in that time slot.";
+var txt6="6.)Now select the teacher who has least work load per week and no of duties assigned.";
+var txt7="7.)Click on assign duty that will increment his/her duty.Click on mail button that will send mail to that teacher.";
+var txt =" SELECT TEACHERS";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("box").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter1();
+
+function typeWriter1() {
+  if (j < txt1.length) {
+    document.getElementById("box1").innerHTML += txt1.charAt(j);
+    j++;
+    setTimeout(typeWriter1, speed);
+  }
+}
+typeWriter2();
+function typeWriter2() {
+  if (k < txt2.length) {
+    document.getElementById("box2").innerHTML += txt2.charAt(k);
+    k++;
+    setTimeout(typeWriter2, speed);
+  }
+}
+typeWriter3();
+function typeWriter3() {
+  if (l < txt3.length) {
+    document.getElementById("box3").innerHTML += txt3.charAt(l);
+    l++;
+    setTimeout(typeWriter3, speed);
+  }
+}
+typeWriter4();
+function typeWriter4() {
+  if (m< txt4.length) {
+    document.getElementById("box4").innerHTML += txt4.charAt(m);
+    m++;
+    setTimeout(typeWriter4, speed);
+  }
+}
+typeWriter5();
+function typeWriter5() {
+  if (n < txt5.length) {
+    document.getElementById("box5").innerHTML += txt5.charAt(n);
+    n++;
+    setTimeout(typeWriter5, speed);
+  }
+}
+typeWriter6();
+function typeWriter6() {
+  if (o < txt6.length) {
+    document.getElementById("box6").innerHTML += txt6.charAt(o);
+    o++;
+    setTimeout(typeWriter6, speed);
+  }
+}
+typeWriter7();
+function typeWriter7() {
+  if (p < txt7.length) {
+    document.getElementById("box7").innerHTML += txt7.charAt(p);
+    p++;
+    setTimeout(typeWriter7, speed);
+  }
+}
+</script>
+</body>
+</html>

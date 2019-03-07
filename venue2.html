@@ -1,0 +1,183 @@
+﻿<html>
+<head>
+<style>
+div ul li{
+float:right;
+border-right:1px solid lightgray;
+height:25;
+list-style:none;
+}
+
+.d1 {
+font-family: 'Corben', cursive;
+letter-spacing: 0.1rem;
+	text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
+font-size: 1rem;
+color: white;
+}
+
+#t1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:90%;
+width:100%;
+// opacity: 0.7;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+ //transition: transform 0.5s;
+//transition:0.3s;
+}
+#t1:hover {
+    opacity: 0.65;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+ //transform: scale(0.5);
+}
+#days{
+   margin-top: -30px;
+    margin-bottom: 60px;
+    margin-right:-40px;
+    margin-left: 130px;
+float:left;
+}
+#lecture{
+ margin-top: -10px;
+    margin-bottom: 90px;
+    margin-right: 190px;
+    margin-left: 70px;
+float:right;
+}
+.b1{
+margin-top:20px;
+margin-left:-10px;
+color:black;
+background-color:lavenderblush;
+font-weight:bold;
+width:100px;
+height:30px;
+font-size:20px;
+}
+.d2{
+width:100%;
+height:75%;
+position:relative;
+cursor:pointer;
+}
+.d2:hover .anim{
+width:100%;
+}
+.d2 img{
+display:block;
+width:100%;
+height:90%;
+}
+.anim{
+width:0%;
+height:90%;      
+background:linear-gradient(to top, #00ffcc 0%, #009999 100%); 
+position:absolute;
+top:0;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+transition:0.7s ease;
+}
+.anim h3{
+color:black;
+font-size:47px;
+border:6px double mistyrose;
+padding:10px 10px;
+}
+h1{
+color:black;
+text-align:center;
+font-size:30px;
+font-family:arial;
+}
+</style> 
+</head>
+<script>
+function submitForms(){
+
+document.getElementById("f1").submit();
+}
+</script>
+
+  
+<body onload="typeWriter()" style="background:linear-gradient(to top left, #ffcccc 0%, #ff6666 61%);">
+
+<!--back to homepage -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<a href="project2.html"><img src="c1.png" align="left" height="70" width="135"></a>
+<div id="right">
+<ul>
+<li style="font-size:25px"><a href="project2.html"><i class="fa fa-home"></i></a></li>
+<li style="font-size:25px"><b>Welcome,Guest </b></li>
+</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<hr>
+
+<!----code-->
+
+<div class="d1">
+<h1 id="box" style="text-shadow: 7px 7px 10px grey;"></h1>
+<script>
+var i = 0;
+var txt =" SELECT VENUE";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("box").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</div>
+ 
+<div class="d2" style="float:left;width:70%;">
+<img src="IMG-20180420-WA0000.jpg">
+<div class="anim">
+<h3>SELECT VENUE FOR EDISON BLOCK</h3>
+</div>
+</div>
+<div class="w3-container" style=""float:right;">
+
+<form id="f1" action="select_edison.php" method="post">
+<h2 id="s1" style="color:black;margin-left:1000px">SELECT DAY</h2>
+<br>
+<select name="DAYS" id="days" style="width: 80px;height:30px;">
+   <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+<br>
+<br>
+
+<h2 id="s2" style="color:black;float:right;margin-top:40px;margin-right:110px;align-items:center;">SELECT LECTURE</h2>
+<br><br><br>
+<select name="le" id="lecture" style="width: 80px;height:30px;">
+    <option value="One">1st</option>
+    <option value="Two">2nd</option>
+    <option value="Three">3rd</option>
+    <option value="Four">4th</option>
+    <option value="Five">5th</option>
+    <option value="Six">6th</option>
+    <option value="Seven">7th</option>
+    <option value="Eight">8th</option>
+  </select>
+<br>
+<br>
+</form>
+</div>
+<center><button class="b1" onclick="submitForms()">Submit</button></center>
+</body>
+</html>

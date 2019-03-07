@@ -1,0 +1,157 @@
+.loader{
+	border:3px solid #d6336c;
+	width:200px;
+	height:200px;
+	border-radius:50%; 
+	border-left-color: transparent;
+  border-right-color: transparent;
+	animation:rotate 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
+}
+#loader2{
+	border:3px solid #3bc9db;
+	width:220px;
+	height:220px;
+	position:relative;
+	top:-216px;
+	border-left-color: transparent;
+  border-right-color: transparent;
+	animation:rotate2 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
+}
+#loader3{
+	border:3px solid #d6336c;
+	width:240px;
+	height:240px;
+	position:relative;
+	top:-452px;
+	border-left-color: transparent;
+  border-right-color: transparent;
+	animation:rotate 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
+}
+#loader4{
+	border:3px solid #3bc9db;
+	width:260px;
+	height:260px;
+	position:relative;
+	top:-708px;
+	border-left-color: transparent;
+  border-right-color: transparent;
+	animation:rotate2 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
+}
+@keyframes rotate{
+	0%{transform:rotateZ(-360deg)}
+	100%{transform:rotateZ(0deg)}
+}
+@keyframes rotate2{
+	0%{transform:rotateZ(360deg)}
+	100%{transform:rotateZ(0deg)}
+}
+#text{
+	color:red;
+	font-family:cursive;
+	font-size:20px;
+	position:relative;
+	top:-880px;
+}
+#message
+{
+ position: fixed;
+        width: 20%; /* Set your desired with */
+        z-index: 2; /* Make sure its above other items. */
+        top: 50%;
+        left: 50%;
+        margin-top: -10%; /* Changes with height. */
+        margin-left: -10%; /* Your width divided by 2. */
+
+        /* You will not need the below, its only for styling   purposes. */
+        padding: 10px;
+}
+#myVideo {
+    position: fixed;
+    width:100%;
+    max-height: 100%;
+}
+video { 
+  -webkit-transform: scaleX(2); 
+  -moz-transform: scaleX(2);
+}
+.rhombus2 {
+ border-radius: 25px;
+position:absolute;
+border:10px;
+border-style:double;
+  width: 140px;
+  height: 140px;
+top:167px;
+cursor: pointer;
+right:9%;
+background-color:white;
+ transform: rotate(45deg);
+color:#ffb6c1;
+}
+.rhombus3 {
+position:absolute;
+ border-radius: 25px;
+border:10px;
+border-style:double;
+  width: 140px;
+  height: 140px;
+background-color:white;
+top:330px;
+ transform: rotate(45deg);
+right:20%;
+cursor: pointer;
+color:	#ffb6c1;
+}
+
+.rhombus2:hover{
+background-color:white;
+border-style:solid;
+border:15px;
+ width: 170px;
+  height: 170px;
+}
+.rhombus3:hover{
+background-color:white;
+border-style:solid;
+border:15px;
+width: 170px;
+ height: 170px;
+}
+h4 {
+position:absolute;
+top:140px;
+right:55%;
+font-size:50px;
+}
+#a{
+transform: rotate(315deg);
+color:#ffb6c1;
+padding-right:29%;
+padding-top:17%
+}
+#up{
+position:absolute;
+bottom:0;
+right:5%;
+color:white;
+}
+#down{
+position:absolute;
+bottom:0;
+right:3%;
+color:white;
+}
+h6{
+position:absolute;
+top:0;
+right:2%;
+cursor: help;
+}
+h6:hover{
+}
+#help{
+color:blue;
+text-decoration:none;
+font-size:16;
+cursor: help;
+}

@@ -1,0 +1,199 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="block.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+.center-inner {
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+}
+.bubbles {
+display: inline-block;
+font-family: arial;
+position: relative;
+}
+
+.bubbles h1 {
+position: relative;
+margin: 1em 0 0;
+font-family: 'Luckiest Guy', cursive;
+color: #fff;
+z-index: 2;
+}
+
+.individual-bubble {
+position: absolute;
+border-radius: 100%;
+bottom: 10px;
+background-color: #fff;
+z-index: 1;
+}
+
+75% {
+  font-size: 300%;
+  margin-left: 25%;
+  width: 150%;
+}
+h1{
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body id="gradient">
+<center><div class="center-outer">
+<div class="center-inner">
+
+<div class="bubbles">
+<h1>SELECT BLOCK FOR VENUE</h1>
+</div>
+
+</div>
+</div>
+</center>
+<a href="venue1.html"> <div class="card j" style="background-color:white;width:350;height:400;margin-top:3.5%;">
+  <img id="img" src="turing.jpg" height="100%" width="100%">
+<div class="container">
+<h4><b>TURING</b></h4> 
+  </div>
+</div></a>
+<a href="venue2.html"> <div class="card k" style="background-color:white;width:350;height:400;margin-left:37%;margin-top:-400;">
+  <img id="img" src="ed.png" height="100%" width="100%">
+  <div class="container">
+<H4> EDISON</H4>
+</div>
+</div></a>
+<a href="ven3.html"><div class="card l" style="background-color:white;width:350;height:400;float:right;margin-top:-400">
+  <img id="img" src="newton.jpg" height="100%" width="100%">
+ <div class="container">
+<h4><b>NEWTON</b></h4> 
+</div>
+</div></a>
+<a href="project2.html"><i class="fa fa-angle-up" id="up" style="font-size:36px"></i></a>
+
+
+<script>
+var colors = new Array(
+  [62,35,255],
+  [60,255,60],
+  [255,35,98],
+  [45,175,230],
+  [255,0,255],
+  [255,128,0]);
+var step = 0;
+//color table indices for: 
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+//transition speed
+var gradientSpeed = 0.002;
+
+function updateGradient()
+{
+  
+  if ( $===undefined ) return;
+  
+var c0_0 = colors[colorIndices[0]];
+var c0_1 = colors[colorIndices[1]];
+var c1_0 = colors[colorIndices[2]];
+var c1_1 = colors[colorIndices[3]];
+
+var istep = 1 - step;
+var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+ $('#gradient').css({
+   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  
+  step += gradientSpeed;
+  if ( step >= 1 )
+  {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    
+  }
+}
+
+setInterval(updateGradient,10);
+</script>
+<script>
+$(document).ready(function($){
+
+    // Define a blank array for the effect positions. This will be populated based on width of the title.
+    var bArray = [];
+    // Define a size array, this will be used to vary bubble sizes
+    var sArray = [4,6,8,10];
+ 
+    // Push the header width values to bArray
+    for (var i = 0; i < $('.bubbles').width(); i++) {
+        bArray.push(i);
+    }
+     
+    // Function to select random array element
+    // Used within the setInterval a few times
+    function randomValue(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+ 
+    // setInterval function used to create new bubble every 350 milliseconds
+    setInterval(function(){
+         
+        // Get a random size, defined as variable so it can be used for both width and height
+        var size = randomValue(sArray);
+        // New bubble appeneded to div with it's size and left position being set inline
+        // Left value is set through getting a random value from bArray
+        $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+         
+        // Animate each bubble to the top (bottom 100%) and reduce opacity as it moves
+        // Callback function used to remove finsihed animations from the page
+        $('.individual-bubble').animate({
+            'bottom': '100%',
+            'opacity' : '-=0.7'
+        }, 3000, function(){
+            $(this).remove()
+        }
+        );
+ 
+ 
+    }, 350);
+});
+</script>
+</body>
+<html>

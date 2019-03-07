@@ -1,0 +1,93 @@
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="main1.css">
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+<style>
+#d1{
+text-align:center;
+padding-top:35px;
+}
+#d2{
+padding-top:110px;
+padding-left:460px;
+line-height:20px;
+}
+fieldset{
+width:400px;
+height:210px;
+background: #f0f5f5;
+}
+button{
+width:100px;
+background-color: #009999;
+}
+#l1{
+font-family: 'Playfair Display SC', serif;
+font-size:50px;
+color: #000066;
+}
+h1{
+font-family: 'Abril Fatface', cursive;
+}
+#f1{
+font-family: 'Source Serif Pro', serif;
+}
+#b1{
+ background: radial-gradient(circle, #f08080 25%, transparent 40%), #ff3657;
+}
+</style>
+        <title>Project</title>
+    </head>
+    <body style="display:none;">
+        <!--Our div is hidden by default-->
+        <center><div id="message" style="display:none;">
+<div class="loader" id="loader"></div>
+<div class="loader" id="loader2"></div>
+<div class="loader" id="loader3"></div>
+<div class="loader" id="loader4"></div>
+<span id="text">
+<b> DEPARTMENT<br>MANAGEMENT<br>SYSTEM...
+</span></b>
+</div></center>
+      
+	  <div id="login">
+	<div id="d1">
+<h1>DEPARTMENT&nbsp; &nbsp;MANAGEMENT&nbsp;&nbsp;SYSTEM</h1>
+</div>
+<div id="d2">
+<form id="f1" action="validation.php" method="post">
+<fieldset>
+<legend id="l1">LOGIN</legend>
+<br><br>
+<b>Username&nbsp;&nbsp;<input type="text" placeholder="Enter username" name="user" style="height:30;width:70%;"></b><br><br>
+<b>Password &nbsp;&nbsp; <input type="password" placeholder="Enter password" name="pass" style="height:30;width:70%;"></b><br><br><br>
+<button>Login</button>
+<br>
+</fieldset>
+</form>
+</div>  
+	</div> 
+	  
+	  
+
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+	$(window).load(function() {
+  $("body").fadeIn("slow");
+});
+        $( document ).ready(function(){
+	$('#login').hide();
+            $('#message').fadeIn(2000, function(){
+               $('#message').delay(0010).fadeOut();
+		 $('#login').fadeIn(2000);
+		  $('body').css("background","radial-gradient(circle, #f08080 25%, transparent 40%), #ff3657");
+		});
+		});
+        </script>
+    </body>
+</html>

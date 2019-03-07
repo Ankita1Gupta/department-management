@@ -1,0 +1,201 @@
+﻿<html>
+<head>
+<style>
+div ul li{
+float:right;
+border-right:1px solid lightgray;
+height:25;
+list-style:none;
+}
+
+.d1 {
+font-family: 'Corben', cursive;
+letter-spacing: 0.1rem;
+	text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
+font-size: 1rem;
+color: white;
+}
+
+#t1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:90%;
+width:100%;
+// opacity: 0.7;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+ //transition: transform 0.5s;
+//transition:0.3s;
+}
+#t1:hover {
+    opacity: 0.65;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+ //transform: scale(0.5);
+}
+#days{
+//align-self:left;
+   margin-top: -30px;
+    margin-bottom: 60px;
+    margin-right:80px;
+    margin-left: 150px;
+float:left;
+//text-align:center;
+}
+#lecture{
+//align-self:right;
+ margin-top: -240px;
+    margin-bottom: 90px;
+    margin-right: 180px;
+    margin-left: 180px;
+float:right;
+}
+.b1{
+margin-top:80px;
+margin-left:-22px;
+color:black;
+background-color:lavenderblush;
+font-weight:bold;
+width:100px;
+height:30px;
+font-size:20px;
+}
+.d2{
+width:100%;
+height:75%;
+position:relative;
+cursor:pointer;
+}
+.d2:hover .anim{
+width:100%;
+}
+.d2 img{
+display:block;
+width:100%;
+height:90%;
+}
+.anim{
+width:0%;
+height:90%;  
+background:linear-gradient(to right, #e55d87,#5fc3e4);
+//background:repeating-radial-gradient(#2193b0 50%,#6dd5ed 30%);
+position:absolute;
+top:0;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+transition:0.7s ease;
+}
+.anim h3{
+color:black;
+font-size:50px;
+border:6px double mistyrose;
+padding:10px 10px;
+}
+
+
+h1{
+color:black;
+text-align:center;
+font-size:30px;
+font-family:arial;
+}
+</style>  
+</head>
+<script>
+function submitForms(){
+
+document.getElementById("f1").submit();
+}
+</script>
+
+<body onload="typeWriter()" style="background:linear-gradient(to top, #1fa2ff, #12d8fa, #a6ffcb);">      
+<!--back to homepage -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<a href="project2.html"><img src="c1.png" align="left" height="70" width="135"></a>
+<div id="right">
+<ul>
+<li style="font-size:25px"><a href="project2.html"><i class="fa fa-home"></i></a></li>
+<li style="font-size:25px"><b>Welcome,Guest </b></li>
+
+</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<hr>
+
+<!---code --->
+
+
+
+
+
+
+<div class="d1">
+<h1 id="box" style="text-shadow: 7px 7px 10px grey;"></h1>
+<script>
+var i = 0;
+var txt =" SELECT TEACHER";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("box").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</div>
+
+
+
+
+
+
+
+<div class="d2" style="float:left;width:70%;/*margin-top:9%"*/>
+<img src="tr.jpg" id="t1">
+<div class="anim">
+<h3>SELECT TEACHER</h3>
+</div>
+</div>
+<div class="w3-container" style=""float:right;">
+
+<form id="f1" action="select_teach.php" method="post">
+<h2 id="s1" style="color:black;margin-left:1020px;">SELECT DAY</h2>
+<br>
+<br>
+<select name="DAYS" id="days" style="width: 80px;height:30px;">
+   <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+      </select>
+<br>
+<br>
+
+<h2 id="s2" style="color:black;float:right;margin-top:40px;margin-right:100px;align-items:center;">SELECT LECTURE</h2>
+<br><br><br>
+<select name="le" id="lecture" style="width: 80px;height:30px;">
+    <option value="One">One</option>
+    <option value="Two">Two</option>
+    <option value="Three">Three</option>
+    <option value="Four">Four</option>
+    <option value="Five">Five</option>
+    <option value="Six">Six</option>
+    <option value="Seven">Seven</option>
+    <option value="Eight">Eight</option>
+  </select>
+<br>
+<br>
+</form>
+</div>
+<center><button class="b1" onclick="submitForms()">Submit</button></center>
+
+</body>
+</html>
